@@ -276,7 +276,7 @@ function create_fixed_coordinate_function(body, fixed_dim, fixed_value, N)
 end 
 
 """
-    GeometricMomentsThreaded(body::Function, mesh::AbstractMesh; compute_centroids::Bool = true)
+    GeometricMomentsThreaded(body::Function, mesh::NTuple{N,AbstractVector}; compute_centroids::Bool = true)
 
 Multithreaded version of GeometricMoments. Compute geometric moments (volumes, centroids, 
 face capacities) using direct integration with parallel processing.
@@ -286,7 +286,7 @@ Uses Julia's multithreading to parallelize computations across cells.
 
 # Arguments
 - `body::Function`: The level set function defining the domain
-- `mesh::AbstractMesh`: The mesh on which to compute geometric quantities
+- `mesh::NTuple{N,AbstractVector}`: The mesh on which to compute geometric quantities
 - `compute_centroids::Bool`: Whether to compute interface centroids
 
 # Returns
