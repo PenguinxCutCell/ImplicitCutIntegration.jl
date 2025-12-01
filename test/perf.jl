@@ -11,3 +11,4 @@ mesh = ntuple(_ -> collect(range(-DOMAIN_EXTENT, DOMAIN_EXTENT; length = 5)), 2)
 body = (x, y) -> x^2 + y^2 - RADIUS^2
 
 @time A, B, V, W, C_ω, C_γ, Γ, cell_types = GeometricMoments(body, mesh; compute_centroids = true)
+@time A_t, B_t, V_t, W_t, C_ω_t, C_γ_t, Γ_t, cell_types_t = GeometricMomentsThreaded(body, mesh; compute_centroids = true)
